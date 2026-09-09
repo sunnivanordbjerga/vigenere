@@ -6,24 +6,20 @@ ALPHABET = ascii_uppercase
 ALPHABET_LENGTH = len(ALPHABET)
 
 
-def _convert_and_validate(text: str, key: str) -> tuple[list[int], list[int]]:
+def _text_to_ints(text: str) -> list[int]:
     """
-    Converts a text string and key string to integer lists (A=0,B=1,...).
+    Converts a text string to an integer list (A=0,B=1,...).
     Characters outside A-Z/a-z are removed.
 
     Raise:
-        ValueError if either input contains no letters.
+        ValueError if the text contains no letters.
     """
     text_nums = [ALPHABET.index(c) for c in text.upper() if c in ALPHABET]
-    key_nums = [ALPHABET.index(c) for c in key.upper() if c in ALPHABET]
 
     if not text_nums:
-        raise ValueError("The text must contain at least one letter")
+        raise ValueError(f"The text must contain at least one letter. Got {text}")
 
-    if not key_nums:
-        raise ValueError("The key must contain at least one letter")
-
-    return text_nums, key_nums
+    return text_nums
 
 
 def _get_key_stream(key_nums: list[int]) -> Iterator[int]:
@@ -41,12 +37,12 @@ def encrypt(plaintext: str, key: str) -> str:
     Returns:
         str: The encrypted text
     """
-    plain_text_nums, key_nums = _convert_and_validate(plaintext, key)
+    plain_text_nums = _text_to_ints(plaintext)
+    key_nums = _text_to_ints(key)
     key_stream = _get_key_stream(key_nums)
 
     cipher = [
-        ALPHABET[(p + next(key_stream)) % ALPHABET_LENGTH]
-        for p in plain_text_nums
+        ALPHABET[(p + next(key_stream)) % ALPHABET_LENGTH] for p in plain_text_nums
     ]
     return "".join(cipher)
 
@@ -61,11 +57,11 @@ def decrypt(ciphertext: str, key: str) -> str:
     Returns:
         str: The decrypted text
     """
-    cipher_text_nums, key_nums = _convert_and_validate(ciphertext, key)
+    cipher_text_nums = _text_to_ints(ciphertext)
+    key_nums = _text_to_ints(key)
     key_stream = _get_key_stream(key_nums)
 
     plaintext = [
-        ALPHABET[(c - next(key_stream)) % ALPHABET_LENGTH]
-        for c in cipher_text_nums
+        ALPHABET[(c - next(key_stream)) % ALPHABET_LENGTH] for c in cipher_text_nums
     ]
     return "".join(plaintext)

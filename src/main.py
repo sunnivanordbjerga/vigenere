@@ -4,7 +4,7 @@ from vigenere import decrypt, encrypt
 
 
 def main():
-    """ Runs a terminal program to decrypt and encrypt text using the Vigenére cipher."""
+    """Runs a terminal program to decrypt and encrypt text using the Vigenére cipher."""
 
     print("\n=========VIGENÉRE ENCRYPTER / DECRYPTER=========\n")
     print("Note: Characters outside A-Z/a-z are removed.\n")
