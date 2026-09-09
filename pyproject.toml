@@ -1,0 +1,24 @@
+[project]
+name = "vigenere"
+version = "1.0.0"
+authors = [{ name = "Sunniva Nord Bjerga", email = "sunnivanordbjerga@gmail.com" }]
+maintainers = [{ name = "Sunniva Nord Bjerga", email = "sunnivanordbjerga@gmail.com" }]
+description = "Lighweight Vigenére encrypter/decrypter terminal program."
+readme = "README.md"
+requires-python = ">= 3.13"
+license = "MIT"
+license-files = ["LICEN[CS]E.*"]
+keywords = ["cryptography", "crypto", "vigenere"]
+
+[project.optional-dependencies]
+dev = [
+    "pytest == 9.1.1",
+    "ruff == 0.16.6"
+]
+
+[project.urls]
+Repository = "https://github.com/sunnivanordbjerga/vigenere"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
