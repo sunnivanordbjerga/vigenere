@@ -21,7 +21,7 @@ def main():
         cypher_func = encrypt
     else:
         prompt_text = "Enter cipher text: "
-        result_label = "Encrypted text: "
+        result_label = "Decrypted text: "
         cypher_func = decrypt
 
     text = input(prompt_text)
