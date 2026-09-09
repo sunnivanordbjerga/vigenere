@@ -7,6 +7,12 @@
 
 *A lightweight Vigénere encryption and decryption terminal program.*
 
+---
+
+![Vigenere gif](vigenere.gif)
+
+---
+
 ## Features
 - *Symmetric cryptography*
 - *Defensive input validation*
