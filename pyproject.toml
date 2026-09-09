@@ -3,7 +3,7 @@ name = "vigenere"
 version = "1.0.0"
 authors = [{ name = "Sunniva Nord Bjerga", email = "sunnivanordbjerga@gmail.com" }]
 maintainers = [{ name = "Sunniva Nord Bjerga", email = "sunnivanordbjerga@gmail.com" }]
-description = "Lighweight Vigenére encrypter/decrypter terminal program."
+description = "Ligthweight Vigenére encrypter/decrypter terminal program."
 readme = "README.md"
 requires-python = ">= 3.13"
 license = "MIT"
