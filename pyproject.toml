@@ -23,3 +23,9 @@ Repository = "https://github.com/sunnivanordbjerga/vigenere"
 [tool.pytest.ini_options]
 pythonpath = ["src"]
 testpaths = ["tests"]
+
+[tool.coverage.report]
+exclude_also = [
+    "if __name__ == .__main__.:",
+    "def main\\(\\):",
+]
