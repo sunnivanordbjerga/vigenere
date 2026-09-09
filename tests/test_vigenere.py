@@ -1,6 +1,6 @@
 import pytest
 
-from src.vigenere import _text_to_ints, decrypt, encrypt
+from vigenere import _text_to_ints, decrypt, encrypt
 
 
 def test_text_to_ints_raises_value_error_on_only_non_az():
