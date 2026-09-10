@@ -15,8 +15,8 @@
 
 ---
 ## Features
-- *Symmetric cryptography*
-- *Defensive input validation*
+- Symmetric cryptography
+- Defensive input validation
 
 ---
 ## Project structure
@@ -45,19 +45,12 @@
 ```bash
 pytest
 ```
-### Checking Code Coverage
-Test coverage is automatically reported via `pytest-cov`
-```bash
-pytest --cov=src 
-```
-### Code Formatting & Linting
-```bash
-# Check for code quality issues
-ruff check .
 
-# Automatically format the code style
-ruff format .
-```
+---
+
+## Authors
+Sunniva Nord Bjerga
+
 ---
 
 ## License
