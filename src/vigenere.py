@@ -41,10 +41,9 @@ def encrypt(plaintext: str, key: str) -> str:
     key_nums = _text_to_ints(key)
     key_stream = _get_key_stream(key_nums)
 
-    cipher = [
+    return "".join(
         ALPHABET[(p + next(key_stream)) % ALPHABET_LENGTH] for p in plain_text_nums
-    ]
-    return "".join(cipher)
+    )
 
 
 def decrypt(ciphertext: str, key: str) -> str:
@@ -61,7 +60,6 @@ def decrypt(ciphertext: str, key: str) -> str:
     key_nums = _text_to_ints(key)
     key_stream = _get_key_stream(key_nums)
 
-    plaintext = [
+    return "".join(
         ALPHABET[(c - next(key_stream)) % ALPHABET_LENGTH] for c in cipher_text_nums
-    ]
-    return "".join(plaintext)
+    )
